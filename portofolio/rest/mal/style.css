@@ -1,0 +1,25 @@
+body {
+	background-color: #f5f5f5;
+}
+select#type {
+	max-width: 100px;
+}
+.title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	overflow-wrap: break-word;
+	height: 20px;
+}
+
+.col-md-3 img {
+	height: 250px !important;
+}
+div#AnimeDetailModal {
+	padding-right: unset !important;
+}
+/* @media (max-width: 576px) {
+	.col-md-3 img {
+		height: 250px !important;
+	}
+} */
