@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/loading.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <title>Hello, world!</title>
+
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- isLoading true -->
+    <div v-if="isLoading">
+      <div class="wrapper">
+        <h1><span>LOADING</span></h1>
+      </div>
+    </div>
+    <!-- isLoading false -->
+    <div v-if="!isLoading">
+      <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm">
+        <a class="navbar-brand" href="#">{COVID-19}</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div style="background-color: #f1f1f1 !important;">
+        <div class="container py-3">
+          <div class="data-indo  mb-3">
+            <div class="row mb-1">
+              <div class="col-md-3 col-6">
+                <div class="card border-0 shadow-sm bg-dark">
+                  <div class="card-body text-center text-warning">
+                    <i class="fas fa-virus"></i>
+                    <h6>Positif</h6>
+                    <h5 class="font-weight-bold">{{dataIndo.jumlahKasus}}</h5>
+                    <h6>Orang</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center text-success">
+                    <i class="fas fa-shield-alt"></i>
+                    <h6>Sembuh</h6>
+                    <h5 class="font-weight-bold">{{dataIndo.sembuh}}</h5>
+                    <h6>Orang</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center text-danger">
+                    <i class="fas fa-skull-crossbones"></i>
+                    <h6>Meninggal</h6>
+                    <h5 class="font-weight-bold">{{dataIndo.meninggal}}</h5>
+                    <h6>Orang</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body text-center text-danger">
+                    <i class="fas fa-skull-crossbones"></i>
+                    <h6>Dalam Perawatan</h6>
+                    <h5 class="font-weight-bold">{{dataIndo.perawatan}}</h5>
+                    <h6>Orang</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="text-muted"> Last update: <b>{{lastUpdate}}</b></span>
+            </div>
+          </div>
+
+          <div class="card shadow border-0 ">
+            <div class="container">
+              <div class="table-responsive mt-2">
+                <table class="table table-striped table-bordered ">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <th class="thead">No</th>
+                      <th class="thead">Provinsi</th>
+                      <th class="thead">Positif</th>
+                      <th class="thead">Sembuh</th>
+                      <th class="thead">Meninggal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(data, index) in dataProvinsi">
+                      <td>{{index+1}}</td>
+                      <td>{{data.provinsi}}</td>
+                      <td><span class="text-warning"><i class="fas fa-virus"></i> {{data.kasusPosi}}</span></td>
+                      <td><span class="text-success"><i class="fas fa-shield-alt"></i> {{data.kasusSemb}}</span></td>
+                      <td><span class="text-danger"><i class="fas fa-skull-crossbones"></i>{{data.kasusMeni}}</span>
+                      </td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="text-white bg-dark p-3">
+        <div class="container">
+          <div class="row">
+            <div class="col ">
+              <b>Technologies</b>
+              <div>
+                <i class="fab fa-vuejs"></i>
+                <i class="fab fa-bootstrap"></i>
+              </div>
+              <div>
+                <a class="text-danger" href="https://github.com/mathdroid/indonesia-covid-19-api ">Indonesia COVID 19
+                  API
+                </a>
+              </div>
+            </div>
+            <div class="col text-white">
+              <b>Author</b>
+              <div>Ario Pratomo</div>
+              <a href="https://instagram.com/ario.dev" class="text-white"> <i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/ariopratomo" class="text-white"> <i class="fab fa-github"></i></a>
+              <a href="#" class="text-white"> <i class="fab fa-linkedin"></i></a>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="assets/js/vue.min.js"></script>
+  <script src="api.js"></script>
+</body>
+
+</html>
