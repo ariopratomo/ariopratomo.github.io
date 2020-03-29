@@ -1,16 +1,8 @@
-// const FILES_TO_CACHE = [
-//   'offline.html',
-// ];
-// evt.waitUntil(
-//   caches.open(CACHE_NAME).then((cache) => {
-//     console.log('[ServiceWorker] Pre-caching offline page');
-//     return cache.addAll(FILES_TO_CACHE);
-//   })
-// );
-var CACHE_NAME = 'covid-19-vue-cache';
+var CACHE_NAME = 'covid-19-vue-cache-v1';
 var urlsToCache = [
-  'offline.html',
-  'assets/css/offline.css'
+  './offline.html',
+  './assets/css/offline.css',
+  './index.html'
 ];
 
 self.addEventListener('install', function (event) {
