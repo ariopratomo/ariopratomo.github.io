@@ -2,7 +2,6 @@ var CACHE_NAME = 'covid-19-vue-cache-v1';
 var urlsToCache = [
   './offline.html',
   './assets/css/offline.css',
-  './index.html'
 ];
 
 self.addEventListener('install', function (event) {
