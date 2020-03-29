@@ -3,12 +3,14 @@ var app = new Vue({
 	data: {
 		dataIndo: [],
 		dataProvinsi: [],
+		dataGlobal: [],
 		lastUpdate: null,
 		isLoading: true
 	},
 	mounted() {
 		const url = 'https://indonesia-covid-19.mathdro.id/api/';
-		const urlGlobal = 'https://covid19.mathdro.id/api/countries/indonesia';
+		const urlGlobal = 'https://covid19.mathdro.id/api/';
+
 
 		fetch(url).then((res) => res.json()).then((res) => {
 			this.dataIndo = res;
@@ -18,7 +20,7 @@ var app = new Vue({
 			this.dataProvinsi = data.data;
 			loadingFalse();
 		});
-		fetch(urlGlobal).then((res) => res.json()).then((res) => {
+		fetch(urlGlobal + 'countries/indonesia/').then((res) => res.json()).then((res) => {
 			loadingFalse();
 			var months = [
 				'Januari',
@@ -45,6 +47,14 @@ var app = new Vue({
 			var month = months[month];
 			this.lastUpdate = dt + ' ' + month + ' ' + year + ' ' + hr + ':' + mnt + ':' + scnd;
 		});
+
+
+		// Global
+		fetch(urlGlobal).then((res) => res.json()).then((res) => {
+			this.dataGlobal = res;
+			loadingFalse();
+		});
+
 		loadingFalse = () => {
 			setTimeout(() => {
 				this.isLoading = false;

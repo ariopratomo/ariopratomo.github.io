@@ -4,6 +4,7 @@
 	/* color: #ffffff; */
 	background-color: #ffffff;
 }
+
 .table-responsive {
 	/* display: block; */
 	/* width: 100%; */
@@ -12,4 +13,43 @@
 	/* overflow-y: auto; */
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.content {
+	margin-top: -150px;
+}
+
+.vertical-center {
+	min-height: 100%;
+	/* Fallback for browsers do NOT support vh unit */
+	min-height: 100vh;
+	/* These two lines are counted as one :-)       */
+
+	display: flex;
+	align-items: center;
+}
+
+.sembuh,
+.perawatan {
+	padding-left: 0;
+}
+
+.jumbotron {
+	height: 400px;
+}
+
+@media (max-width: 425px) {
+	.content {
+		margin-top: -170px;
+	}
+
+}
+
+@media (max-width: 320px) {
+
+	.h4,
+	h4 {
+		font-size: 1.4rem;
+	}
+
 }
