@@ -187,3 +187,8 @@ a.navbar-brand {
   }
 
 }
+@media(min-width:735px) {
+  .bg-home-head {
+    background-image: none;
+  }
+
