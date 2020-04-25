@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+a.navbar-brand {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.badge-olshop {
+  color: #fff;
+  background-color: #8080FF;
+  font-weight: 600;
+}
+
+.home-head h2 {
+  color: #8080FF !important;
+  font-size: 3rem;
+}
+
+.home-head h2.on {
+  font-weight: 300;
+}
+
+
+
+@media(min-width:769px) {
+  .navbar-nav.mobile {
+    display: none;
+  }
+
+  .navbar {
+    margin-top: 10px;
+  }
+
+  .home-head {
+    margin-top: 120px;
+  }
+
+  li.nav-item.active a {
+    color: #8080FF !important;
+  }
+
+  .bg-home1 {
+    position: absolute;
+    top: -10px;
+    z-index: -1;
+    width: 250px;
+  }
+
+  .bg-home2 {
+    position: absolute;
+    top: -10px;
+    z-index: -1;
+  }
+
+  a.nav-link {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+    color: #818181;
+  }
+
+  a.nav-link:hover {
+    color: #8080FF !important;
+  }
+
+  li.nav-item {
+    padding-left: 20px;
+  }
+
+  ul.navbar-nav {
+    margin-left: 30px;
+  }
+
+  .home-head {
+    margin-top: 100px;
+  }
+
+  .nav-bottom-mobile {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  /* .active-nav-bottom a {
+    color: #8080FF;
+  } */
+
+  .active-nav-bottom a {
+    color: #8080FF !important;
+  }
+
+  .nav-bottom-mobile .row .col-3 a:hover {
+    color: #8080FF !important;
+  }
+
+  .nav-bottom-mobile .row .col-3 a {
+    text-decoration: none;
+    color: #868686;
+  }
+
+  a.text-center-0 {
+    text-align: center;
+  }
+
+  .navbar-nav.web {
+    display: none;
+  }
+
+  .bg-home-head {
+    background: none;
+  }
+
+  .navbar .navbar-toggler:focus {
+    outline: none !important;
+  }
+
+  .bg-home1,
+  .bg-home2 {
+    display: none !important;
+  }
+
+
+
+  .bg-home-head {
+    background-image: url(portofolio/bg-home2.svg);
+    background-size: 390px;
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+
+  .bg-olshop {
+    background-color: #8080FF !important;
+  }
+
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("toggle.svg");
+  }
+
+  li.nav-item.active a {
+    color: #fff !important;
+  }
+
+  li.nav-item a {
+    color: #e1e1e1 !important;
+  }
+
+  .home-head {
+    margin-top: 60px;
+  }
+
+  .content {
+    margin-bottom: 50px;
+  }
+
+  .nav-bottom-mobile {
+    padding: 5px;
+    -webkit-box-shadow: -1px -1px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: -1px -1px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: -1px -1px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+
+}
+
+@media(max-width:425px) {
+
+  a.navbar-brand {
+    text-align: center;
+  }
+
+  .bg-home1 {
+    display: none !important;
+  }
+
+  .home-head {
+    margin-top: 30px;
+  }
+
+  .bg-home-head {
+    background-image: url(bg-home2.svg);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position-x: 275px;
+  }
+
+}
