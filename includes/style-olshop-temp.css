@@ -126,7 +126,7 @@ a.navbar-brand {
 
 
   .bg-home-head {
-    background-image: url(/portofolio/bg-home1.svg);
+    background-image: url(./portofolio/bg-home1.svg);
     background-size: 390px;
     background-repeat: no-repeat;
     background-position-x: right;
